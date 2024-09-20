@@ -1,12 +1,14 @@
 #!/bin/bash
 
-login(){
+# Funcion del login inicial
+
+login() {
     clear
     echo "¡Bienvenido a AdoptME!"
     echo "Por favor ingrese su usuario:"
-    read user 
+    read user
     echo "Contraseña:"
-    read -s pass 
+    read -s pass
 
     encontrado=0
 
@@ -19,7 +21,7 @@ login(){
             encontrado=1
             break
         fi
-    done < "admins.txt"
+    done <"admins.txt"
 
     if [[ encontrado -eq 0 ]]; then
         while IFS=: read -r u p f; do
@@ -31,7 +33,7 @@ login(){
                 encontrado=2
                 break
             fi
-        done < "clients.txt"
+        done <"clients.txt"
     fi
 
     # si es 1 es admin - 2 si es cliente
@@ -54,17 +56,37 @@ login(){
     fi
 }
 
+# Termina funcion del Log In incial
+
+existeAdmin=0
 
 if ! [[ -e admins.txt ]]; then
-  touch admins.txt
+    touch admins.txt
+    existeAdmin=0
+else
+    while IFS=: read -r u p f; do
+        if [[ "$u" == "admin" && "$p" == "admin" ]]; then
+            existeAdmin=1
+            break
+        else
+            existeAdmin=0
+            break
+        fi
+    done <"admins.txt"
+
 fi
 
 if ! [[ -e clients.txt ]]; then
-  touch clients.txt
+    touch clients.txt
 fi
 
 exit=0
-while [ $exit -eq 0 ];
-do
-  login
+while [ $exit -eq 0 ]; do
+    if [[ $existeAdmin -eq 0 ]]; then
+        chmod 777 signup.sh
+        ./signup.sh
+        exit=1
+    else
+        login
+    fi
 done
