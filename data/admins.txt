@@ -1,0 +1,2 @@
+Cedula:Nombre:Telefono:Fecha_de_Nacimiento:Contraseña_Encriptada
+1:admin:1:11/11/1111:admin

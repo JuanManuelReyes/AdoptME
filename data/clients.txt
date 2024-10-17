@@ -1,0 +1,2 @@
+Cedula:Nombre:Telefono:Fecha_de_Nacimiento:Contraseña_Encriptada
+2:2:2:22/22/2222:2
