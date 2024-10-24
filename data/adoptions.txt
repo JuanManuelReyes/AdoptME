@@ -1,0 +1,2 @@
+ID_Mascota:Tipo:Nombre:Sexo:Edad:Descripcion:Fecha_de_Ingreso:Fecha_de_Adopcion
+1:perro:asd:f:12:as:22/22/2222:24/10/2024

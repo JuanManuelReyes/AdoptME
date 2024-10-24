@@ -1,2 +1,2 @@
-ID Mascota:Tipo:Nombre:Sexo:Edad:Descripcion:Fecha de Ingreso
-1:perro:facu:no tiene:25:infiel:25/10/1999
+ID_Mascota:Tipo:Nombre:Sexo:Edad:Descripcion:Fecha_de_Ingreso
+2:a:a:a:12:a:11/11/1111

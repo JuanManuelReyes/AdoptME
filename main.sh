@@ -3,6 +3,7 @@
 touch ./data/admins.txt
 touch ./data/clients.txt
 touch ./data/pets.txt
+touch ./data/adoptions.txt
 
 add_header_if_empty() {
     local file="$1"
@@ -11,12 +12,15 @@ add_header_if_empty() {
         echo "Cedula:Nombre:Telefono:Fecha_de_Nacimiento:Contraseña_Encriptada" >> "$file"
     elif [[ ! -s "$file" && "$type" == "pet" ]]; then
         echo "ID_Mascota:Tipo:Nombre:Sexo:Edad:Descripcion:Fecha_de_Ingreso" >> "$file"
+    elif [[ ! -s "$file" && "$type" == "adoptions" ]]; then
+        echo "ID_Mascota:Tipo:Nombre:Sexo:Edad:Descripcion:Fecha_de_Ingreso:Fecha_de_Adopcion" >> "$file"
     fi
 }
 
 add_header_if_empty "./data/admins.txt" user
 add_header_if_empty "./data/clients.txt" user
 add_header_if_empty "./data/pets.txt" pet
+add_header_if_empty "./data/adoptions.txt" adoptions
 
 show_menu() {
     echo "Seleccione una opción:"
