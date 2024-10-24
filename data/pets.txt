@@ -1,0 +1,2 @@
+ID Mascota:Tipo:Nombre:Sexo:Edad:Descripcion:Fecha de Ingreso
+1:perro:facu:no tiene:25:infiel:25/10/1999
