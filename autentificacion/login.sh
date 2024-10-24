@@ -34,10 +34,9 @@ login_user() {
         fi
     elif [ -n "$user_info_client" ]; then
         stored_password=$(echo "$user_info_client" | awk -F':' '{print $5}')
-        echo "Contraseña almacenada: $stored_password"
         if validate_password "$stored_password" "$password"; then
             echo "Bienvenido cliente."
-            ./app/client_menu.sh
+            ./app/client/client_menu.sh
         else
             echo "Credenciales incorrectas."
             exit 1
