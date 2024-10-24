@@ -27,7 +27,7 @@ login_user() {
         stored_password=$(echo "$user_info_admin" | awk -F':' '{print $5}')
         if validate_password "$stored_password" "$password"; then
             echo "Bienvenido administrador."
-            ./app/admin_menu.sh
+            ./app/admin/admin_menu.sh
         else
             echo "Credenciales incorrectas."
             exit 1
