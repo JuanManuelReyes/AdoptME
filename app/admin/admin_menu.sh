@@ -15,10 +15,11 @@ admin_menu() {
             ./autentificacion/register.sh
             ;;
         2)
-            register_pet
+            pwd
+            ./app/admin/pet_register.sh
             ;;
         3)
-            adoption_statistics
+            ./app/admin/adoption_stats.sh
             ;;
         4)
             exit 0
@@ -28,16 +29,6 @@ admin_menu() {
             admin_menu
             ;;
     esac
-}
-
-register_pet() {
-    echo "Registrar mascota: "
-    admin_menu
-}
-
-adoption_statistics() {
-    echo "Estadísticas de adopción: "
-    admin_menu
 }
 
 admin_menu
