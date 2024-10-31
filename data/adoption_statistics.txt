@@ -1,0 +1,12 @@
+Estadísticas de Adopciones:
+
+Porcentaje de adopción por tipo de mascota:
+Tipo: 0 - 100.00%
+
+Adopciones por mes:
+Mes: 0 - Adopciones: 1
+Mes: 10 - Adopciones: 1
+
+Mes con más adopciones: 0 con 1 adopciones
+
+Edad promedio de los animales adoptados: 5.00 años
