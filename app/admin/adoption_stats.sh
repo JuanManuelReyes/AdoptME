@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 
 adoptions_file="./data/adoptions.txt"
 stats_file="./data/adoption_statistics.txt"
@@ -14,9 +14,11 @@ total_adopted=0
 total_age=0
 adopted_count=0
 
-read -r header < "$adoptions_file"
-
 while IFS=":" read -r id tipo nombre sexo edad descripcion fecha_ingreso fecha_adopcion; do
+  if [[ "$id" == "ID_Mascota" ]]; then
+    continue
+  fi
+
   ((adoption_count["$tipo"]++))
   ((total_adopted++))
 
