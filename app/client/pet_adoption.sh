@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 
 adopt_pet() {
     local pets_file="./data/pets.txt"

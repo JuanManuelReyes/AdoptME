@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 
 touch ./data/admins.txt
 touch ./data/clients.txt

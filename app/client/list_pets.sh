@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 
 list_pets() {
     local file="./data/pets.txt"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 
 admin_file="./data/admins.txt"
 client_file="./data/clients.txt"
