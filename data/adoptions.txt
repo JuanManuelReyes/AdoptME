@@ -1,3 +1,3 @@
 ID_Mascota:Tipo:Nombre:Sexo:Edad:Descripcion:Fecha_de_Ingreso:Fecha_de_Adopcion
-1:perro:rex:m:5:comisario:10/10/2024:24/10/2024
-2:gato:mandarina:f:3:fruta:01/09/2024:30/09/2024
+2:Gato:Gato Barato:F:1:Comida para Rato:28/11/2024:28/11/2024
+1:Perro:Rex:M:5:Es comisario:28/11/2024:28/11/2024

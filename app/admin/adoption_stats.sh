@@ -1,11 +1,20 @@
-#!/opt/homebrew/bin/bash
+#!/bin/bash
+
+clear
 
 adoptions_file="./data/adoptions.txt"
 stats_file="./data/adoption_statistics.txt"
 
+echo "================================"
+echo "=== Estadisticas de Adopcion ==="
+echo "================================"
+echo
+
 if [[ ! -f "$adoptions_file" ]]; then
-  echo "El archivo de adopciones no existe en la ruta especificada."
-  exit 1
+  echo "Aun no han habido adopciones, intentalo mas tarde."
+  sleep 3
+  ./app/admin/admin_menu.sh
+  exit 0
 fi
 
 declare -A adoption_count
@@ -92,3 +101,6 @@ fi
 
 echo ""
 echo "Las estadísticas se han guardado en $stats_file."
+
+sleep 3
+./app/admin/admin_menu.sh

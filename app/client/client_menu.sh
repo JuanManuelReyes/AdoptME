@@ -1,4 +1,6 @@
-#!/opt/homebrew/bin/bash
+#!/bin/bash
+
+clear
 
 client_menu() {
     clear
@@ -6,7 +8,7 @@ client_menu() {
     echo "1. Listar mascotas"
     echo "2. Adoptar mascota"
     echo "3. Salir"
-    echo "================================="
+    echo "==========================="
     echo -n "Seleccione una opción: "
     read option
     case $option in

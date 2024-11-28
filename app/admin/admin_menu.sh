@@ -1,4 +1,6 @@
-#!/opt/homebrew/bin/bash
+#!/bin/bash
+
+clear
 
 admin_menu() {
     clear
@@ -22,7 +24,7 @@ admin_menu() {
             ./app/admin/adoption_stats.sh
             ;;
         4)
-            exit 0
+            exit 1
             ;;
         *)
             echo "Opción no válida. Intente de nuevo."

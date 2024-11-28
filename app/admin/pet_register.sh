@@ -1,6 +1,25 @@
-#!/opt/homebrew/bin/bash
+#!/bin/bash
+
+clear
+
+touch ./data/pets.txt
 
 pets_file="./data/pets.txt"
+
+add_header_if_empty() {
+    local file="$1"
+    local type="$2"
+    if [[ ! -s "$file" && "$type" == "pet" ]]; then
+        echo "ID_Mascota:Tipo:Nombre:Sexo:Edad:Descripcion:Fecha_de_Ingreso:Estado" >> "$file"
+    fi
+}
+
+add_header_if_empty "./data/pets.txt" pet
+
+echo "============================"
+echo "=== Registro de Mascotas ==="
+echo "============================"
+echo
 
 validate_input() {
     local input="$1"
@@ -16,6 +35,14 @@ validate_number() {
         read -p "Entrada no válida. Debe contener solo números. Ingrese nuevamente: " number
     done
     echo "$number"
+}
+
+validate_sex() {
+    local sex="$1"
+    while [[ "$sex" != "M" && "$sex" != "F" ]]; do
+        read -p "Entrada no válida. Ingrese 'M' para Macho o 'F' para Hembra: " sex
+    done
+    echo "$sex"
 }
 
 validate_date() {
@@ -47,7 +74,7 @@ register_pet() {
 
     echo "Ingrese sexo:"
     read sex
-    sex=$(validate_input "$sex")
+    sex=$(validate_sex "$sex")
 
     echo "Ingrese edad:"
     read age
@@ -57,13 +84,14 @@ register_pet() {
     read desc
     desc=$(validate_input "$desc")
 
-    echo "Ingrese fecha de ingreso (dd/mm/yyyy):"
-    read doi
-    doi=$(validate_date "$doi")
+    doi=$(date +"%d/%m/%Y")
 
-    echo "$id:$type:$name:$sex:$age:$desc:$doi" >> "$pets_file"
-    echo "Mascota registrado."
+    status="No Adoptada"
 
+    echo "$id:$type:$name:$sex:$age:$desc:$doi:$status" >> "$pets_file"
+    echo "Mascota registrada."
+    sleep 3
 }
 
 register_pet
+./app/admin/admin_menu.sh

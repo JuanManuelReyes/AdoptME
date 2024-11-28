@@ -1,7 +1,14 @@
-#!/opt/homebrew/bin/bash
+#!/bin/bash
+
+clear
 
 admin_file="./data/admins.txt"
 client_file="./data/clients.txt"
+
+echo "========================="
+echo "=== Login de Usuarios ==="
+echo "========================="
+echo
 
 validate_password() {
     local stored_password="$1"

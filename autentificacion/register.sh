@@ -1,7 +1,14 @@
-#!/opt/homebrew/bin/bash
+#!/bin/bash
+
+clear
 
 admin_file="./data/admins.txt"
 client_file="./data/clients.txt"
+
+echo "============================"
+echo "=== Registro de Usuarios ==="
+echo "============================"
+echo
 
 validate_input() {
     local input="$1"
@@ -59,6 +66,7 @@ validate_admin_option() {
 register_user() {
     if [ $(wc -l < "$admin_file") -le 1 ]; then
         echo "No hay ningún administrador registrado. Debe registrar el usuario 'admin' con la contraseña 'admin'."
+        echo
 
         echo "Ingrese cédula (sin puntos ni guiones):"
         read id
@@ -79,6 +87,7 @@ register_user() {
 
         echo "$user_data" >> "$admin_file"
         echo "Primer usuario admin registrado exitosamente."
+        sleep 3
     else
         echo "Ingrese cédula (sin puntos ni guiones):"
         read id
@@ -108,11 +117,14 @@ register_user() {
         if [ "$user_type" == "S" ]; then
             echo "$id:$name:$phone:$dob:$password" >> "$admin_file"
             echo "Usuario administrador registrado."
+            sleep 3
         elif [ "$user_type" == "N" ]; then
             echo "$id:$name:$phone:$dob:$password" >> "$client_file"
             echo "Usuario cliente registrado."
+            sleep 3
         fi
     fi
 }
 
 register_user
+./app/admin/admin_menu.sh
